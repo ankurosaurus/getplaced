@@ -1,6 +1,7 @@
 import React from 'react';
-import { PanelLeft, ChevronRight, Search, Sun, Moon, CheckCircle2 } from 'lucide-react';
+import { PanelLeft, ChevronRight, Search, CheckCircle2 } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
+import { ThemeToggle } from './ThemeToggle';
 
 export const PreparationTopNav = ({
   currentPath,
@@ -8,7 +9,7 @@ export const PreparationTopNav = ({
   onToggleSidebar,
   onOpenSearch
 }) => {
-  const { theme, toggleTheme, solved } = useProgress();
+  const { solved } = useProgress();
   const totalSolved = Object.keys(solved).length;
 
   const pathTitles = {
@@ -137,17 +138,7 @@ export const PreparationTopNav = ({
           </kbd>
         </button>
 
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-full text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
-          aria-label="Toggle theme"
-        >
-          {theme === 'dark' ? (
-            <Sun className="w-4 h-4 text-amber-400" />
-          ) : (
-            <Moon className="w-4 h-4 text-zinc-700" />
-          )}
-        </button>
+        <ThemeToggle />
       </div>
     </header>
   );

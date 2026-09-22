@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useProgress } from '../context/ProgressContext';
-import { Search, Sun, Moon, Menu, X, ChevronDown, CheckCircle2, Bookmark, Flame } from 'lucide-react';
+import { Search, Menu, X, ChevronDown, CheckCircle2, Bookmark, Flame } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar = ({ currentPath, onNavigate, onOpenSearch }) => {
-  const { theme, toggleTheme, solved, streak } = useProgress();
+  const { solved, streak } = useProgress();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -151,17 +152,7 @@ export const Navbar = ({ currentPath, onNavigate, onOpenSearch }) => {
             )}
 
             {/* Dark / Light Mode Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-400" />
-              ) : (
-                <Moon className="w-4 h-4 text-zinc-700" />
-              )}
-            </button>
+            <ThemeToggle />
 
             {/* Mobile menu hamburger button */}
             <button

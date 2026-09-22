@@ -94,8 +94,10 @@ export const ProgressProvider = ({ children }) => {
       localStorage.setItem('hynts-theme', theme);
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
         document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     } catch (e) {
       console.error(e);
@@ -103,7 +105,15 @@ export const ProgressProvider = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    try {
+      document.documentElement.classList.add('theme-transitioning');
+      setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+      setTimeout(() => {
+        document.documentElement.classList.remove('theme-transitioning');
+      }, 400);
+    } catch {
+      setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    }
   };
 
   const getTodayKey = () => {
