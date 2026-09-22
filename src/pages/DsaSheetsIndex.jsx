@@ -87,7 +87,7 @@ export const DsaSheetsIndex = ({ onNavigate }) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-28 flex flex-col gap-10">
+    <div className="max-w-7xl mx-auto px-2 sm:px-6 py-4 sm:py-8 flex flex-col gap-6 sm:gap-10 w-full">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
         <span className="text-xs font-bold uppercase tracking-wider text-orange-500 font-lexend">

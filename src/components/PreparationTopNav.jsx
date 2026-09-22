@@ -49,10 +49,10 @@ export const PreparationTopNav = ({
   return (
     <header className="flex h-16 shrink-0 items-center justify-between border-b border-zinc-200 dark:border-zinc-800/80 px-4 bg-white/80 dark:bg-[#121214]/80 backdrop-blur-md sticky top-0 z-20">
       {/* Left: Sidebar toggle + separator + breadcrumb */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 min-w-0">
         <button
           onClick={onToggleSidebar}
-          className="inline-flex items-center justify-center p-2 rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+          className="inline-flex items-center justify-center p-2 rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer shrink-0"
           title="Toggle Sidebar"
           aria-label="Toggle Sidebar"
         >
@@ -60,7 +60,12 @@ export const PreparationTopNav = ({
           <span className="sr-only">Toggle Sidebar</span>
         </button>
 
-        <div className="w-px h-5 bg-zinc-200 dark:border-zinc-800/80 mx-1" />
+        <div className="w-px h-5 bg-zinc-200 dark:border-zinc-800/80 mx-1 shrink-0" />
+
+        {/* Mobile Title */}
+        <span className="sm:hidden font-semibold text-xs text-zinc-900 dark:text-zinc-100 truncate max-w-[140px] font-lexend">
+          {segments.length > 1 ? formatSegment(segments[segments.length - 1]) : 'Preparation'}
+        </span>
 
         {/* Breadcrumbs */}
         <nav aria-label="breadcrumb" className="hidden sm:block">

@@ -471,9 +471,14 @@ export const DsaSheetDetail = ({ slug, onNavigate }) => {
                                   return (
                                     <div
                                       key={pId}
-                                      className="flex items-start gap-3 p-3 border border-gray-200 dark:border-gray-800 rounded-lg bg-zinc-50/50 dark:bg-zinc-900/30"
+                                      className={`flex items-start gap-3 p-3.5 border rounded-xl transition-colors ${
+                                        isSolved
+                                          ? 'border-emerald-500/20 bg-emerald-50/30 dark:bg-emerald-950/10'
+                                          : 'border-gray-200 dark:border-gray-800/90 bg-zinc-50/60 dark:bg-zinc-900/40'
+                                      }`}
                                     >
-                                      <div className="flex-shrink-0 mt-0.5">
+                                      {/* Touch Checkbox */}
+                                      <div className="flex-shrink-0 pt-0.5">
                                         <button
                                           type="button"
                                           onClick={() =>
@@ -485,25 +490,27 @@ export const DsaSheetDetail = ({ slug, onNavigate }) => {
                                               sheetSlug: slug
                                             })
                                           }
-                                          className={`h-4 w-4 rounded-xs border-2 flex items-center justify-center cursor-pointer ${
+                                          aria-label={isSolved ? 'Mark unsolved' : 'Mark solved'}
+                                          className={`h-6 w-6 rounded-md border-2 flex items-center justify-center cursor-pointer transition-all active:scale-90 touch-manipulation ${
                                             isSolved
-                                              ? 'bg-green-500 border-green-500 text-white'
-                                              : 'border-gray-300 dark:border-gray-600'
+                                              ? 'bg-emerald-500 border-emerald-500 text-white shadow-xs'
+                                              : 'border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-800'
                                           }`}
                                         >
-                                          {isSolved && <Check className="w-3 h-3 stroke-[3]" />}
+                                          {isSolved && <Check className="w-4 h-4 stroke-[3]" />}
                                         </button>
                                       </div>
 
+                                      {/* Problem Details */}
                                       <div className="flex-1 min-w-0">
                                         <a
                                           href={probUrl || '#'}
                                           target="_blank"
                                           rel="noopener noreferrer"
-                                          className={`transition-colors font-lexend text-sm block mb-1 leading-snug ${
+                                          className={`font-lexend text-sm block mb-1.5 leading-snug font-medium break-words transition-colors ${
                                             isSolved
-                                              ? 'line-through text-gray-400 dark:text-gray-500'
-                                              : 'text-gray-800 dark:text-gray-200 hover:text-orange-600'
+                                              ? 'line-through text-zinc-400 dark:text-zinc-500'
+                                              : 'text-zinc-900 dark:text-zinc-100 hover:text-orange-600 dark:hover:text-orange-400 active:text-orange-600'
                                           }`}
                                         >
                                           {prob.title}
@@ -511,13 +518,13 @@ export const DsaSheetDetail = ({ slug, onNavigate }) => {
 
                                         <div className="flex items-center gap-2 text-xs flex-wrap">
                                           {prob.platform && (
-                                            <span className="text-gray-600 dark:text-gray-400 uppercase font-mono text-[10px]">
+                                            <span className="text-zinc-600 dark:text-zinc-400 uppercase font-mono text-[10px] font-semibold bg-zinc-200/60 dark:bg-zinc-800 px-1.5 py-0.5 rounded">
                                               {prob.platform}
                                             </span>
                                           )}
-                                          <span className="text-gray-400">•</span>
+                                          <span className="text-zinc-300 dark:text-zinc-700">•</span>
                                           <span
-                                            className={`font-medium ${getDifficultyClass(
+                                            className={`font-medium text-xs ${getDifficultyClass(
                                               prob.difficulty
                                             )}`}
                                           >
@@ -533,7 +540,7 @@ export const DsaSheetDetail = ({ slug, onNavigate }) => {
                                                   title: prob.title
                                                 })
                                               }
-                                              className="text-red-500 text-[11px] font-semibold flex items-center gap-1 ml-auto"
+                                              className="text-red-500 hover:text-red-600 text-[11px] font-semibold flex items-center gap-1 ml-auto p-1 touch-manipulation"
                                             >
                                               <YoutubeIcon className="w-3.5 h-3.5" />
                                               <span>Video</span>
@@ -542,7 +549,8 @@ export const DsaSheetDetail = ({ slug, onNavigate }) => {
                                         </div>
                                       </div>
 
-                                      <div className="flex items-center gap-1 shrink-0">
+                                      {/* Note and Star Actions */}
+                                      <div className="flex items-center gap-1 shrink-0 pt-0.5">
                                         <button
                                           type="button"
                                           onClick={() =>
@@ -551,7 +559,12 @@ export const DsaSheetDetail = ({ slug, onNavigate }) => {
                                               title: prob.title
                                             })
                                           }
-                                          className={`p-1 ${hasNote ? 'text-indigo-500' : 'text-gray-400'}`}
+                                          className={`p-2 rounded-lg transition-colors touch-manipulation ${
+                                            hasNote
+                                              ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40'
+                                              : 'text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200'
+                                          }`}
+                                          title={hasNote ? 'Edit note' : 'Add note'}
                                         >
                                           <FileText className="w-4 h-4" />
                                         </button>
@@ -567,7 +580,12 @@ export const DsaSheetDetail = ({ slug, onNavigate }) => {
                                               sheetSlug: slug
                                             })
                                           }
-                                          className={`p-1 ${isStarred ? 'text-yellow-500' : 'text-gray-400'}`}
+                                          className={`p-2 rounded-lg transition-colors touch-manipulation ${
+                                            isStarred
+                                              ? 'text-yellow-500 fill-yellow-500'
+                                              : 'text-zinc-400 hover:text-yellow-500'
+                                          }`}
+                                          title={isStarred ? 'Remove bookmark' : 'Bookmark question'}
                                         >
                                           <Star
                                             className="w-4 h-4"

@@ -102,10 +102,10 @@ export const Home = ({ onNavigate }) => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none">
             <button
               onClick={() => onNavigate('/preparation')}
-              className="px-8 py-4 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-black font-lexend font-bold text-sm flex items-center gap-2.5 shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-zinc-950 dark:bg-white text-white dark:text-black font-lexend font-bold text-sm flex items-center justify-center gap-2.5 shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer"
             >
               <span>Get Started for Free</span>
               <ArrowRight className="w-4 h-4" />
@@ -113,14 +113,14 @@ export const Home = ({ onNavigate }) => {
 
             <button
               onClick={() => onNavigate('/preparation/dsa-sheets')}
-              className="px-8 py-4 rounded-full bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 font-lexend font-semibold text-sm border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 font-lexend font-semibold text-sm border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all cursor-pointer text-center"
             >
               Browse DSA Sheets
             </button>
           </div>
 
           {/* Key Feature Stats Pills */}
-          <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-3xl">
+          <div className="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 w-full max-w-3xl">
             {[
               { label: 'Curated Questions', val: '2,500+' },
               { label: 'Company Sheets', val: '45+' },
@@ -193,30 +193,30 @@ export const Home = ({ onNavigate }) => {
       </section>
 
       {/* ── FOUNDER NOTE SECTION ── */}
-      <section className="py-20 px-6 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/40">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden bg-gradient-to-tr from-indigo-500 to-purple-600 p-1 shrink-0 shadow-2xl">
-            <div className="w-full h-full rounded-[22px] bg-zinc-900 flex flex-col items-center justify-center text-center p-4">
-              <Sparkles className="w-10 h-10 text-indigo-400 mb-2" />
-              <span className="font-lexend font-bold text-white text-base">Hynts 2.0</span>
-              <span className="text-[11px] text-zinc-400 mt-1">Built For The Community</span>
+      <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/40">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-10">
+          <div className="relative w-36 h-36 sm:w-48 sm:h-48 rounded-3xl overflow-hidden bg-gradient-to-tr from-[#ef763f] via-purple-600 to-[#007ff5] p-1 shrink-0 shadow-2xl">
+            <div className="w-full h-full rounded-[22px] bg-zinc-950 flex flex-col items-center justify-center text-center p-4">
+              <Sparkles className="w-9 h-9 text-[#ef763f] mb-2" />
+              <span className="font-lexend font-bold text-white text-base">GetPlaced</span>
+              <span className="text-[11px] text-zinc-400 mt-0.5">by Ankur Jha</span>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 text-left">
+          <div className="flex flex-col gap-3.5 text-center md:text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-orange-500 font-lexend">
-              One Of You, Who Built This For You
+              Built By An Engineer, For Engineering Students
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold font-lexend text-zinc-900 dark:text-white leading-snug">
               "We understand the grind because we've lived through it."
             </h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
-              Preparing for tech placements is tough when high-yield sheets, company tags, and roadmaps are scattered across hundreds of bookmarks. Hynts was created to organize everything you need to crack dream roles without paywalls, subscriptions, or spam.
+            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+              Preparing for tech placements is tough when high-yield problem sheets, company tags, and roadmaps are scattered across bookmarks and spreadsheets. GetPlaced organizes everything you need to crack dream roles without paywalls, subscriptions, or spam.
             </p>
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center justify-center md:justify-start gap-4 pt-2">
               <button
                 onClick={() => onNavigate('/preparation')}
-                className="px-6 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-lexend font-semibold text-xs transition-all shadow-md"
+                className="w-full sm:w-auto px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-lexend font-semibold text-xs transition-all shadow-md cursor-pointer"
               >
                 Go to Preparation Dashboard
               </button>

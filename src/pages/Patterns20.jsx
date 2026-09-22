@@ -38,7 +38,7 @@ export const Patterns20 = ({ onNavigate }) => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-28 flex flex-col gap-8">
+    <div className="max-w-6xl mx-auto px-2 sm:px-6 py-4 sm:py-8 flex flex-col gap-6 sm:gap-8 w-full">
       <div>
         <button
           onClick={() => onNavigate('/preparation')}
