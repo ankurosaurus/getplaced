@@ -31,14 +31,20 @@ import { InterviewExperiences } from './pages/InterviewExperiences';
 import { Legal } from './pages/Legal';
 
 function MainRouter() {
-  const [currentPath, setCurrentPath] = useState(() => {
-    return window.location.pathname || '/';
-  });
+  const getNormalizedPath = () => {
+    let p = window.location.pathname || '/';
+    if (p.startsWith('/getplaced')) {
+      p = p.slice('/getplaced'.length) || '/';
+    }
+    return p;
+  };
+
+  const [currentPath, setCurrentPath] = useState(getNormalizedPath);
   const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     const onPopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+      setCurrentPath(getNormalizedPath());
       window.scrollTo(0, 0);
     };
     window.addEventListener('popstate', onPopState);
@@ -51,7 +57,9 @@ function MainRouter() {
       return;
     }
     if (path !== currentPath) {
-      window.history.pushState({}, '', path);
+      const isGhPages = window.location.pathname.startsWith('/getplaced');
+      const targetUrl = isGhPages ? `/getplaced${path}` : path;
+      window.history.pushState({}, '', targetUrl);
       setCurrentPath(path);
       window.scrollTo(0, 0);
     }
