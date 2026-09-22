@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, CheckCircle, Code, Building2, Database, Layers, Terminal, Compass, Users, Flame, BookOpen, Star, FileText } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle, Code, Building2, Database, Layers, Terminal, Compass, Users, Flame, BookOpen, Star, FileText, GraduationCap } from 'lucide-react';
 
 export const Home = ({ onNavigate }) => {
   const featureCards = [
@@ -80,16 +80,16 @@ export const Home = ({ onNavigate }) => {
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-1.5 bg-zinc-50/70 dark:bg-zinc-900/60 backdrop-blur-md mb-6 shadow-sm">
-            <Users className="w-3.5 h-3.5 text-indigo-500" />
-            <span className="text-zinc-600 dark:text-zinc-300 text-xs font-medium font-lexend">
-              Used by <strong className="text-zinc-900 dark:text-white font-bold">1 Million+</strong> engineers for interview prep
+            <GraduationCap className="w-4 h-4 text-[#ef763f]" />
+            <span className="text-zinc-600 dark:text-zinc-300 text-xs font-medium font-manrope">
+              Built for <strong className="text-zinc-900 dark:text-white font-bold">Engineering Students</strong> cracking placement rounds
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-lexend text-zinc-950 dark:text-white leading-[1.15] mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-manrope text-zinc-950 dark:text-white leading-[1.15] mb-6">
             Your{' '}
-            <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#ef763f] via-purple-500 to-[#007ff5] bg-clip-text text-transparent">
               UNFAIR
             </span>{' '}
             Advantage <br />
@@ -98,7 +98,7 @@ export const Home = ({ onNavigate }) => {
 
           {/* Subheading */}
           <p className="text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-10 font-sans">
-            Hynts 2.0 gathers all high-yield DSA sheets, company-specific queries, role-wise roadmaps, SQL practice, system design, and verified career templates into one lightning-fast dashboard.
+            GetPlaced gathers all high-yield DSA sheets, company-specific queries, role-wise roadmaps, SQL practice, system design, and verified career toolkits into one lightning-fast dashboard.
           </p>
 
           {/* CTA Buttons */}

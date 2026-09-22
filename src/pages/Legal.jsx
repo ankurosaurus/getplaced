@@ -4,18 +4,18 @@ import { ArrowLeft, Shield, Mail, HelpCircle, FileText } from 'lucide-react';
 export const Legal = ({ type, onNavigate }) => {
   const contentMap = {
     about: {
-      title: 'About Hynts 2.0',
+      title: 'About GetPlaced',
       badge: 'Our Mission',
       body: (
         <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
           <p>
-            Hynts 2.0 was founded with one crystal-clear mission: to democratize software engineering interview preparation and eliminate the noise of scattered links, overpriced courses, and disorganized bookmarks.
+            GetPlaced was founded with one crystal-clear mission: to democratize software engineering interview preparation and eliminate the noise of scattered links, overpriced courses, and disorganized spreadsheets.
           </p>
           <p>
-            Whether you are preparing for campus placements, aiming for SDE-1/2 roles at MAANG companies, or brushing up on SQL and system design, Hynts provides every tool, problem set, and guideline you need under one unified dashboard.
+            Whether you are preparing for campus placements, aiming for SDE roles at top product companies, or brushing up on SQL and system design, GetPlaced provides every tool, problem set, and guideline you need under one unified dashboard.
           </p>
           <p>
-            Our resources are curated by experienced engineers from top product companies and open to everyone for free.
+            Our problem trackers and placement toolkits are curated by experienced engineers and open to students for free.
           </p>
         </div>
       )
@@ -26,13 +26,13 @@ export const Legal = ({ type, onNavigate }) => {
       body: (
         <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
           <p>
-            Have feedback, noticed a broken link, or want to partner with Hynts? We would love to hear from you.
+            Have feedback, noticed a broken link, or want to contribute to GetPlaced? We would love to hear from you.
           </p>
           <div className="p-4 rounded-2xl bg-zinc-100 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700 flex flex-col gap-2">
             <div>
               <strong>Email Support:</strong>{' '}
-              <a href="mailto:support@hynts.in" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                support@hynts.in
+              <a href="mailto:support@getplaced.dev" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                support@getplaced.dev
               </a>
             </div>
             <div>
@@ -43,13 +43,13 @@ export const Legal = ({ type, onNavigate }) => {
                 rel="noreferrer"
                 className="text-emerald-600 dark:text-emerald-400 hover:underline"
               >
-                Join our Official WhatsApp Community
+                Join our Official Student Community
               </a>
             </div>
             <div>
               <strong>Social:</strong> Twitter / X:{' '}
-              <a href="https://twitter.com/hynts_in" target="_blank" rel="noreferrer" className="text-sky-500 hover:underline">
-                @hynts_in
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-sky-500 hover:underline">
+                @getplaced_dev
               </a>
             </div>
           </div>
@@ -62,7 +62,7 @@ export const Legal = ({ type, onNavigate }) => {
       body: (
         <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
           <p>
-            At Hynts, we believe your interview preparation belongs strictly to you. We do not sell your personal information or track private data.
+            At GetPlaced, we believe your interview preparation belongs strictly to you. We do not sell your personal information or track private data.
           </p>
           <p>
             <strong>Local Storage:</strong> All your progress, problem checkboxes, starred questions, and personal notes are saved locally inside your browser's <code>localStorage</code>. You have 100% ownership and can export or wipe this data at any moment.
@@ -79,7 +79,7 @@ export const Legal = ({ type, onNavigate }) => {
       body: (
         <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
           <p>
-            By accessing and using Hynts 2.0, you agree to these Terms of Service. All content provided on the website is for educational and self-preparation purposes.
+            By accessing and using GetPlaced, you agree to these Terms of Service. All content provided on the website is for educational and self-preparation purposes.
           </p>
           <p>
             External links to problems (e.g. LeetCode, takeUforward, GeeksforGeeks, YouTube) are property of their respective creators and organizations.
@@ -93,7 +93,7 @@ export const Legal = ({ type, onNavigate }) => {
       body: (
         <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
           <p>
-            Hynts core sheets, question trackers, notes, and playlists are 100% free and open to everyone without charges or mandatory subscriptions.
+            GetPlaced core sheets, question trackers, notes, and playlists are 100% free and open to everyone without charges or mandatory subscriptions.
           </p>
           <p>
             For any future paid offerings (such as 1-on-1 mock interviews or resume reviews), refunds can be requested within 24 hours of purchase if the service has not yet been rendered.

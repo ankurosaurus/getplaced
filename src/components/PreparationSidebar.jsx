@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { BrandLogo } from './BrandLogo';
 import {
-  Sparkles,
   LayoutDashboard,
   FileCode,
   Building2,
@@ -107,18 +107,8 @@ export const PreparationSidebar = ({
     <div className="flex flex-col h-full bg-white dark:bg-[#121214] text-zinc-800 dark:text-zinc-200 border-r border-zinc-200 dark:border-zinc-800/80 font-lexend select-none">
       {/* Sidebar Header with Logo */}
       <div className="h-16 flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800/80 px-4 shrink-0">
-        <div
-          onClick={() => handleLinkClick('/')}
-          className="flex items-center gap-2 cursor-pointer group"
-        >
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform shrink-0">
-            <Sparkles className="w-4 h-4 text-white" />
-          </div>
-          <div className={`flex items-center gap-1.5 ${isCollapsed ? 'hidden' : 'flex'}`}>
-            <span className="font-lexend font-black text-xl tracking-tight text-zinc-900 dark:text-white">
-              Get<span className="text-indigo-600 dark:text-indigo-400">Placed</span>
-            </span>
-          </div>
+        <div onClick={() => handleLinkClick('/')}>
+          <BrandLogo showWordmark={!isCollapsed} />
         </div>
 
         {/* Mobile close button */}

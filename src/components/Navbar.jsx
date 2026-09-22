@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useProgress } from '../context/ProgressContext';
-import { Search, Sun, Moon, Menu, X, ChevronDown, Sparkles, CheckCircle2, Bookmark, Flame } from 'lucide-react';
+import { Search, Sun, Moon, Menu, X, ChevronDown, CheckCircle2, Bookmark, Flame } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 
 export const Navbar = ({ currentPath, onNavigate, onOpenSearch }) => {
   const { theme, toggleTheme, solved, streak } = useProgress();
@@ -60,18 +61,8 @@ export const Navbar = ({ currentPath, onNavigate, onOpenSearch }) => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div
-            onClick={() => handleNav('/')}
-            className="flex items-center gap-2 cursor-pointer select-none group"
-          >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
-              <Sparkles className="w-4 h-4 text-white" />
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-lexend font-black text-xl tracking-tight text-zinc-900 dark:text-white">
-                Get<span className="text-indigo-600 dark:text-indigo-400">Placed</span>
-              </span>
-            </div>
+          <div onClick={() => handleNav('/')}>
+            <BrandLogo />
           </div>
 
           {/* Desktop Navigation */}

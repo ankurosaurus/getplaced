@@ -46,7 +46,7 @@ export const InterviewExperiences = ({ onNavigate }) => {
         'Round 2: System design — Design Uber Ride Matching System with Geo-hashing and Redis.',
         'Round 3: Behavioral round with Engineering Director.'
       ],
-      tips: 'Read Gaurav Sen system design and do the 32 questions on Hynts System Design sheet!'
+      tips: 'Read Gaurav Sen system design and do the 32 questions on GetPlaced System Design sheet!'
     }
   ];
 

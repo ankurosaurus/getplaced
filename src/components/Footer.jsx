@@ -1,6 +1,7 @@
 import React from 'react';
-import { Sparkles, Heart, MessageCircle } from 'lucide-react';
+import { Heart, MessageCircle } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon } from './Icons';
+import { BrandLogo } from './BrandLogo';
 
 export const Footer = ({ onNavigate }) => {
   return (
@@ -9,18 +10,8 @@ export const Footer = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1: Brand */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <div
-              onClick={() => onNavigate('/')}
-              className="flex items-center gap-2 cursor-pointer select-none group"
-            >
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-md shadow-indigo-500/20">
-                <Sparkles className="w-4 h-4 text-white" />
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-lexend font-black text-xl tracking-tight text-zinc-900 dark:text-white">
-                  Get<span className="text-indigo-600 dark:text-indigo-400">Placed</span>
-                </span>
-              </div>
+            <div onClick={() => onNavigate('/')}>
+              <BrandLogo />
             </div>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed font-sans">
               Track your grind. Clear your interviews. All-in-one placement tracker with curated problem sheets, company banks, SQL mastery, and career toolkits.
