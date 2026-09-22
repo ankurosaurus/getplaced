@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { PreparationShell } from './components/PreparationShell';
 import { GlobalSearchModal } from './components/GlobalSearchModal';
 import { NoteModal } from './components/NoteModal';
+import { Analytics } from '@vercel/analytics/react';
 
 // Pages
 import { Home } from './pages/Home';
@@ -230,6 +231,7 @@ export default function App() {
   return (
     <ProgressProvider>
       <MainRouter />
+      <Analytics />
     </ProgressProvider>
   );
 }
