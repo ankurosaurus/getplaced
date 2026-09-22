@@ -1,0 +1,198 @@
+{
+  "system": "TakeUForward Visual Design System for GetPlaced",
+  "version": "2.0.0",
+  "source": "https://takeuforward.org/",
+  "typography": {
+    "fontFamily": {
+      "base": "'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "heading": "'Manrope', ui-sans-serif, system-ui, sans-serif",
+      "mono": "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+      "display": "'Manrope', sans-serif"
+    },
+    "fontWeights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "usage": {
+        "body": 400,
+        "tagsAndBadges": 500,
+        "subtopics": 500,
+        "buttons": 600,
+        "navigation": 600,
+        "accordionHeaders": 600,
+        "headings": 700,
+        "brandLogo": 800
+      }
+    },
+    "scale": {
+      "h1": {
+        "fontSizeRem": "1.5rem",
+        "fontSizePx": "24px",
+        "lineHeightRem": "2rem",
+        "lineHeightPx": "32px",
+        "fontWeight": 700,
+        "letterSpacing": "normal"
+      },
+      "h2": {
+        "fontSizeRem": "1.25rem",
+        "fontSizePx": "20px",
+        "lineHeightRem": "1.75rem",
+        "lineHeightPx": "28px",
+        "fontWeight": 700,
+        "letterSpacing": "normal"
+      },
+      "h3": {
+        "fontSizeRem": "1.125rem",
+        "fontSizePx": "18px",
+        "lineHeightRem": "1.75rem",
+        "lineHeightPx": "28px",
+        "fontWeight": 600,
+        "letterSpacing": "normal"
+      },
+      "bodyB1": {
+        "fontSizeRem": "1rem",
+        "fontSizePx": "16px",
+        "lineHeightRem": "1.5rem",
+        "lineHeightPx": "24px",
+        "fontWeight": 500
+      },
+      "bodyB2": {
+        "fontSizeRem": "0.9375rem",
+        "fontSizePx": "15px",
+        "lineHeightRem": "1.375rem",
+        "lineHeightPx": "22px",
+        "fontWeight": 500
+      },
+      "bodyB3": {
+        "fontSizeRem": "0.875rem",
+        "fontSizePx": "14px",
+        "lineHeightRem": "1.25rem",
+        "lineHeightPx": "20px",
+        "fontWeight": 400
+      },
+      "bodyB4": {
+        "fontSizeRem": "0.8125rem",
+        "fontSizePx": "13px",
+        "lineHeightRem": "1.125rem",
+        "lineHeightPx": "18px",
+        "fontWeight": 500
+      },
+      "bodyB5": {
+        "fontSizeRem": "0.75rem",
+        "fontSizePx": "12px",
+        "lineHeightRem": "1rem",
+        "lineHeightPx": "16px",
+        "fontWeight": 500
+      },
+      "caption1": {
+        "fontSizeRem": "0.625rem",
+        "fontSizePx": "10px",
+        "lineHeightRem": "0.875rem",
+        "lineHeightPx": "14px",
+        "fontWeight": 500
+      },
+      "button": {
+        "fontSizeRem": "0.875rem",
+        "fontSizePx": "14px",
+        "lineHeightRem": "1.25rem",
+        "lineHeightPx": "20px",
+        "fontWeight": 600
+      }
+    },
+    "letterSpacing": {
+      "normal": "0em",
+      "wide": "0.025em",
+      "tag": "0.12em",
+      "badge": "0.16em"
+    }
+  },
+  "colorPalette": {
+    "light": {
+      "brand": {
+        "primaryOrange": "#ef763f",
+        "primaryOrangeHover": "#e45b1b",
+        "primaryBlue": "#007ff5",
+        "primaryBlueHover": "#006fd6",
+        "primaryBlueBgSubtle": "#eef2f6"
+      },
+      "background": {
+        "page": "#fcfcfd",
+        "surface": "#ffffff",
+        "elevated": "#f4f4f6",
+        "subtle": "#eff2f6"
+      },
+      "text": {
+        "primary": "#222a3c",
+        "secondary": "#516277",
+        "tertiary": "#758395",
+        "inverse": "#ffffff"
+      },
+      "border": {
+        "default": "#e2e8ef",
+        "strong": "#cbd5e1"
+      },
+      "semantics": {
+        "easy": {
+          "text": "#46d160",
+          "bg": "rgba(70, 209, 96, 0.12)",
+          "border": "rgba(70, 209, 96, 0.25)"
+        },
+        "medium": {
+          "text": "#fbbd45",
+          "bg": "rgba(251, 189, 69, 0.12)",
+          "border": "rgba(251, 189, 69, 0.25)"
+        },
+        "hard": {
+          "text": "#ef3c3d",
+          "bg": "rgba(239, 60, 61, 0.12)",
+          "border": "rgba(239, 60, 61, 0.25)"
+        }
+      }
+    },
+    "dark": {
+      "brand": {
+        "primaryOrange": "#ef763f",
+        "primaryOrangeHover": "#ff8d57",
+        "primaryBlue": "#007ff5",
+        "primaryBlueHover": "#3399ff",
+        "primaryBlueBgSubtle": "#0e1827"
+      },
+      "background": {
+        "page": "#070709",
+        "surface": "#0f0f10",
+        "card": "#131316",
+        "elevated": "#1a1a1e",
+        "muted": "#222329"
+      },
+      "text": {
+        "primary": "#fcfcfd",
+        "secondary": "#c0c4cc",
+        "tertiary": "#8b93a1",
+        "inverse": "#070709"
+      },
+      "border": {
+        "default": "#23272e",
+        "strong": "#2f3540"
+      },
+      "semantics": {
+        "easy": {
+          "text": "#46d160",
+          "bg": "rgba(70, 209, 96, 0.14)",
+          "border": "rgba(70, 209, 96, 0.28)"
+        },
+        "medium": {
+          "text": "#fbbd45",
+          "bg": "rgba(251, 189, 69, 0.14)",
+          "border": "rgba(251, 189, 69, 0.28)"
+        },
+        "hard": {
+          "text": "#ef3c3d",
+          "bg": "rgba(239, 60, 61, 0.14)",
+          "border": "rgba(239, 60, 61, 0.28)"
+        }
+      }
+    }
+  }
+}
