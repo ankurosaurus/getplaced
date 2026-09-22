@@ -8,8 +8,6 @@ import {
   BadgeDollarSign,
   Database,
   Boxes,
-  PlaySquare,
-  BookOpen,
   Users,
   HelpCircle,
   MessageSquare,
@@ -27,15 +25,6 @@ export const PreparationSidebar = ({
   onCloseMobile
 }) => {
   const [dsaSheetsOpen, setDsaSheetsOpen] = useState(() => currentPath.startsWith('/preparation/dsa-sheets'));
-  const [dsaPlaylistsOpen, setDsaPlaylistsOpen] = useState(() => currentPath.startsWith('/preparation/dsa-playlists'));
-  const [coreSubjectsOpen, setCoreSubjectsOpen] = useState(() =>
-    currentPath.startsWith('/preparation/dbms') ||
-    currentPath.startsWith('/preparation/os') ||
-    currentPath.startsWith('/preparation/oops')
-  );
-  const [sysDesignPlaylistsOpen, setSysDesignPlaylistsOpen] = useState(() =>
-    currentPath.startsWith('/preparation/system-design-playlists')
-  );
 
   const dsaSheetsList = [
     { title: "Striver's A2Z DSA Sheet", url: "/preparation/dsa-sheets/striver-a2z-dsa-sheet" },
@@ -45,48 +34,6 @@ export const PreparationSidebar = ({
     { title: "Arsh Goyal DSA Sheet", url: "/preparation/dsa-sheets/arsh-goyal-dsa-sheet" },
     { title: "Fraz DSA Sheet", url: "/preparation/dsa-sheets/fraz-dsa-sheet" },
     { title: "Neetcode 150 DSA Sheet", url: "/preparation/dsa-sheets/neetcode-dsa-sheet" }
-  ];
-
-  const dsaPlaylistsList = [
-    { title: "Love Babbar DSA", url: "/preparation/dsa-playlists/love-babbar-dsa-playlist" },
-    { title: "Shradha Khapra DSA", url: "/preparation/dsa-playlists/shradha-khapra-dsa-playlist" },
-    { title: "Rohit Negi DSA", url: "/preparation/dsa-playlists/rohit-negi-dsa-playlist" }
-  ];
-
-  const coreSubjectsGroups = [
-    {
-      group: "DBMS Playlists",
-      items: [
-        { title: "Love Babbar DBMS", url: "/preparation/dbms-playlists/love-babbar-dbms-playlist" },
-        { title: "Riti Kumari DBMS", url: "/preparation/dbms-playlists/riti-kumari-dbms-playlist" }
-      ]
-    },
-    {
-      group: "Operating Systems",
-      items: [
-        { title: "Love Babbar OS", url: "/preparation/os-playlists/love-babbar-os-playlist" },
-        { title: "Riti Kumari OS", url: "/preparation/os-playlists/riti-kumari-os-playlist" },
-        { title: "Vivek Gupta OS", url: "/preparation/os-playlists/vivek-gupta-os-playlist" },
-        { title: "Neso Academy OS", url: "/preparation/os-playlists/neso-academy-os-playlist" }
-      ]
-    },
-    {
-      group: "OOPS Playlists",
-      items: [
-        { title: "Code With Harry OOP", url: "/preparation/oops-playlists/code-with-harry-oops-playlist" },
-        { title: "Rohit Negi OOP", url: "/preparation/oops-playlists/rohit-negi-oops-playlist" },
-        { title: "Jenny's OOP", url: "/preparation/oops-playlists/jenny-lecture-oops-playlist" }
-      ]
-    }
-  ];
-
-  const systemDesignPlaylistsList = [
-    { title: "Gaurav Sen HLD", url: "/preparation/system-design-playlists/gaurav-sen-system-design-playlist" },
-    { title: "Exponent HLD", url: "/preparation/system-design-playlists/exponent-system-design-playlist" },
-    { title: "Hello Interview HLD", url: "/preparation/system-design-playlists/hello-interview-system-design-playlist" },
-    { title: "Code With Aryan LLD", url: "/preparation/system-design-playlists/code-with-aryan-system-design-playlist" },
-    { title: "Coder Army LLD", url: "/preparation/system-design-playlists/coder-army-system-design-playlist" },
-    { title: "Engineering Digest HLD", url: "/preparation/system-design-playlists/engineering-digest-system-design-playlist" }
   ];
 
   const resourcesList = [
@@ -271,152 +218,6 @@ export const PreparationSidebar = ({
           </button>
         </div>
 
-        {/* ── START LEARNING GROUP ── */}
-        <div className="space-y-1">
-          <div
-            className={`px-3 uppercase text-[11px] font-bold tracking-wider text-zinc-400 dark:text-zinc-500 mb-2 ${
-              isCollapsed ? 'hidden' : 'block'
-            }`}
-          >
-            Learning Tracks
-          </div>
-
-          {/* DSA Playlists */}
-          <div>
-            <button
-              onClick={() => {
-                if (isCollapsed) handleLinkClick('/preparation/dsa-playlists');
-                else setDsaPlaylistsOpen(!dsaPlaylistsOpen);
-              }}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
-                currentPath.startsWith('/preparation/dsa-playlists')
-                  ? 'text-[#6366f1] dark:text-indigo-400 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-zinc-100'
-              }`}
-              title="DSA Playlists"
-            >
-              <div className="flex items-center gap-3 truncate">
-                <PlaySquare className="w-5 h-5 shrink-0" />
-                <span className={isCollapsed ? 'hidden' : 'truncate'}>DSA Playlists</span>
-              </div>
-              {!isCollapsed && (
-                <ChevronRight
-                  className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                    dsaPlaylistsOpen ? 'rotate-90 text-indigo-500' : 'text-zinc-400'
-                  }`}
-                />
-              )}
-            </button>
-
-            {!isCollapsed && dsaPlaylistsOpen && (
-              <div className="ml-4 pl-3 border-l border-zinc-200 dark:border-zinc-800/80 my-1 space-y-0.5">
-                {dsaPlaylistsList.map((item) => (
-                  <button
-                    key={item.url}
-                    onClick={() => handleLinkClick(item.url)}
-                    className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 truncate"
-                  >
-                    {item.title}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Core Subjects */}
-          <div>
-            <button
-              onClick={() => {
-                if (isCollapsed) handleLinkClick('/preparation/dbms-playlists');
-                else setCoreSubjectsOpen(!coreSubjectsOpen);
-              }}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
-                currentPath.startsWith('/preparation/dbms') ||
-                currentPath.startsWith('/preparation/os') ||
-                currentPath.startsWith('/preparation/oops')
-                  ? 'text-[#6366f1] dark:text-indigo-400 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-zinc-100'
-              }`}
-              title="Core Subjects"
-            >
-              <div className="flex items-center gap-3 truncate">
-                <BookOpen className="w-5 h-5 shrink-0" />
-                <span className={isCollapsed ? 'hidden' : 'truncate'}>Core Subjects</span>
-              </div>
-              {!isCollapsed && (
-                <ChevronRight
-                  className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                    coreSubjectsOpen ? 'rotate-90 text-indigo-500' : 'text-zinc-400'
-                  }`}
-                />
-              )}
-            </button>
-
-            {!isCollapsed && coreSubjectsOpen && (
-              <div className="ml-4 pl-3 border-l border-zinc-200 dark:border-zinc-800/80 my-1 space-y-2">
-                {coreSubjectsGroups.map((grp) => (
-                  <div key={grp.group} className="space-y-0.5">
-                    <span className="px-2 text-[10px] uppercase font-bold text-zinc-400">
-                      {grp.group}
-                    </span>
-                    {grp.items.map((item) => (
-                      <button
-                        key={item.url}
-                        onClick={() => handleLinkClick(item.url)}
-                        className="w-full text-left px-2.5 py-1 rounded-lg text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 truncate"
-                      >
-                        {item.title}
-                      </button>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* System Design Playlists */}
-          <div>
-            <button
-              onClick={() => {
-                if (isCollapsed) handleLinkClick('/preparation/system-design-playlists');
-                else setSysDesignPlaylistsOpen(!sysDesignPlaylistsOpen);
-              }}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
-                currentPath.startsWith('/preparation/system-design-playlists')
-                  ? 'text-[#6366f1] dark:text-indigo-400 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-zinc-100'
-              }`}
-              title="System Design Playlists"
-            >
-              <div className="flex items-center gap-3 truncate">
-                <Boxes className="w-5 h-5 shrink-0" />
-                <span className={isCollapsed ? 'hidden' : 'truncate'}>System Design Playlists</span>
-              </div>
-              {!isCollapsed && (
-                <ChevronRight
-                  className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                    sysDesignPlaylistsOpen ? 'rotate-90 text-indigo-500' : 'text-zinc-400'
-                  }`}
-                />
-              )}
-            </button>
-
-            {!isCollapsed && sysDesignPlaylistsOpen && (
-              <div className="ml-4 pl-3 border-l border-zinc-200 dark:border-zinc-800/80 my-1 space-y-0.5">
-                {systemDesignPlaylistsList.map((item) => (
-                  <button
-                    key={item.url}
-                    onClick={() => handleLinkClick(item.url)}
-                    className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 truncate"
-                  >
-                    {item.title}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-
         {/* ── RESOURCES GROUP (with blue pulsating dot) ── */}
         <div className="space-y-1">
           <div
@@ -448,6 +249,21 @@ export const PreparationSidebar = ({
           })}
         </div>
       </div>
+
+      {/* Subtle creator attribution */}
+      {!isCollapsed ? (
+        <div className="px-4 py-3 border-t border-zinc-200/80 dark:border-zinc-800/80 shrink-0 text-center">
+          <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-sans tracking-tight">
+            GetPlaced <span className="text-zinc-300 dark:text-zinc-600">•</span> by <span className="font-semibold text-zinc-600 dark:text-zinc-400">Ankur Jha</span>
+          </p>
+        </div>
+      ) : (
+        <div className="py-2.5 border-t border-zinc-200/80 dark:border-zinc-800/80 shrink-0 text-center">
+          <span className="text-[9px] font-bold text-zinc-400 dark:text-zinc-500 select-none" title="GetPlaced by Ankur Jha">
+            AJ
+          </span>
+        </div>
+      )}
     </div>
   );
 

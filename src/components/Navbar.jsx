@@ -34,7 +34,6 @@ export const Navbar = ({ currentPath, onNavigate, onOpenSearch }) => {
     { label: 'Role-Wise Sheets', path: '/preparation/role-wise' },
     { label: 'Most Asked Questions', path: '/preparation/most-asked-questions' },
     { label: 'HR Questions', path: '/preparation/hr-questions' },
-    { label: 'Core & DSA Playlists', path: '/preparation/dsa-playlists' },
     { label: 'Curated Notes', path: '/preparation/notes' },
     { label: 'Resume Templates', path: '/preparation/resume-templates' },
     { label: 'Cold Email Templates', path: '/preparation/cold-email-templets' },

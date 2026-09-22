@@ -100,7 +100,6 @@ export const Footer = ({ onNavigate }) => {
               { label: 'Curated Notes', path: '/preparation/notes' },
               { label: 'Resume Templates', path: '/preparation/resume-templates' },
               { label: 'Cold Email Templates', path: '/preparation/cold-email-templets' },
-              { label: 'Core Playlists', path: '/preparation/dsa-playlists' },
               { label: 'Jobs Board', path: '/jobs' },
               { label: 'Interview Experiences', path: '/interview' }
             ].map((link) => (
@@ -117,8 +116,10 @@ export const Footer = ({ onNavigate }) => {
 
         {/* Bottom bar */}
         <div className="pt-10 mt-10 border-t border-zinc-200/80 dark:border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 dark:text-zinc-500 font-sans">
-          <div className="flex items-center gap-1">
-            <span>Built for engineering students grinding for tech placements. GetPlaced © 2026. Keep showing up.</span>
+          <div className="flex items-center gap-2">
+            <span>© {new Date().getFullYear()} GetPlaced</span>
+            <span className="text-zinc-300 dark:text-zinc-700">•</span>
+            <span>Crafted by <span className="text-zinc-600 dark:text-zinc-400 font-medium">Ankur Jha</span> for engineering students</span>
           </div>
 
           <div className="flex items-center gap-6">

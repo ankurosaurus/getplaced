@@ -69,11 +69,16 @@ export const BrandLogo = ({ size = 'default', showWordmark = true, className = '
 
       {/* Wordmark */}
       {showWordmark && (
-        <div className="flex items-center tracking-tight font-manrope">
-          <span className={`${textSize} font-extrabold text-zinc-900 dark:text-white tracking-tight leading-none`}>
-            Get<span className="text-[#ef763f]">Placed</span>
+        <div className="flex flex-col justify-center leading-none">
+          <div className="flex items-center tracking-tight font-manrope">
+            <span className={`${textSize} font-extrabold text-zinc-900 dark:text-white tracking-tight leading-none`}>
+              Get<span className="text-[#ef763f]">Placed</span>
+            </span>
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#ef763f] ml-1 mb-2 animate-pulse" />
+          </div>
+          <span className="text-[9.5px] text-zinc-400/90 dark:text-zinc-500 font-medium tracking-wide mt-0.5 select-none">
+            by Ankur Jha
           </span>
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#ef763f] ml-1 mb-2 animate-pulse" />
         </div>
       )}
     </div>
