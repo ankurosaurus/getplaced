@@ -1,0 +1,183 @@
+import React, { useState, useEffect } from 'react';
+import { ProgressProvider } from './context/ProgressContext';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { PreparationShell } from './components/PreparationShell';
+import { GlobalSearchModal } from './components/GlobalSearchModal';
+import { NoteModal } from './components/NoteModal';
+
+// Pages
+import { Home } from './pages/Home';
+import { Dashboard } from './pages/Dashboard';
+import { DsaSheetsIndex } from './pages/DsaSheetsIndex';
+import { DsaSheetDetail } from './pages/DsaSheetDetail';
+import { Patterns20 } from './pages/Patterns20';
+import { CompanyWiseIndex } from './pages/CompanyWiseIndex';
+import { CompanyWiseDetail } from './pages/CompanyWiseDetail';
+import { PackageWise } from './pages/PackageWise';
+import { SqlSheet } from './pages/SqlSheet';
+import { SystemDesignSheet } from './pages/SystemDesignSheet';
+import { RoleWiseIndex } from './pages/RoleWiseIndex';
+import { RoleWiseDetail } from './pages/RoleWiseDetail';
+import { MostAskedIndex } from './pages/MostAskedIndex';
+import { MostAskedDetail } from './pages/MostAskedDetail';
+import { HrQuestions } from './pages/HrQuestions';
+import { ColdEmailsIndex } from './pages/ColdEmailsIndex';
+import { PlaylistsIndex } from './pages/PlaylistsIndex';
+import { NotesIndex } from './pages/NotesIndex';
+import { ResumeTemplates } from './pages/ResumeTemplates';
+import { Jobs } from './pages/Jobs';
+import { InterviewExperiences } from './pages/InterviewExperiences';
+import { Legal } from './pages/Legal';
+
+function MainRouter() {
+  const [currentPath, setCurrentPath] = useState(() => {
+    return window.location.pathname || '/';
+  });
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const onPopState = () => {
+      setCurrentPath(window.location.pathname || '/');
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  const navigate = (path, openSearch = false) => {
+    if (openSearch) {
+      setSearchOpen(true);
+      return;
+    }
+    if (path !== currentPath) {
+      window.history.pushState({}, '', path);
+      setCurrentPath(path);
+      window.scrollTo(0, 0);
+    }
+  };
+
+  // Resolve preparation section views
+  const renderPreparationContent = (p) => {
+    if (p === '/preparation') return <Dashboard onNavigate={navigate} />;
+
+    // DSA Sheets
+    if (p === '/preparation/dsa-sheets') return <DsaSheetsIndex onNavigate={navigate} />;
+    if (p.startsWith('/preparation/dsa-sheets/')) {
+      const slug = p.replace('/preparation/dsa-sheets/', '');
+      return <DsaSheetDetail slug={slug} onNavigate={navigate} />;
+    }
+
+    // 20 DSA Patterns
+    if (p === '/preparation/20-essential-dsa-patterns') return <Patterns20 onNavigate={navigate} />;
+
+    // Company Wise DSA
+    if (p === '/preparation/company-wise-dsa-sheet') return <CompanyWiseIndex onNavigate={navigate} />;
+    if (p.startsWith('/preparation/company-wise-dsa-sheet/')) {
+      const slug = p.replace('/preparation/company-wise-dsa-sheet/', '');
+      return <CompanyWiseDetail slug={slug} onNavigate={navigate} />;
+    }
+
+    // Package Wise
+    if (p === '/preparation/package-wise-dsa-sheet') return <PackageWise onNavigate={navigate} />;
+
+    // SQL Sheet
+    if (p === '/preparation/sql-sheet') return <SqlSheet onNavigate={navigate} />;
+
+    // System Design Sheet
+    if (p === '/preparation/system-design-sheet') return <SystemDesignSheet onNavigate={navigate} />;
+
+    // Role Wise
+    if (p === '/preparation/role-wise') return <RoleWiseIndex onNavigate={navigate} />;
+    if (p.startsWith('/preparation/role-wise/')) {
+      const slug = p.replace('/preparation/role-wise/', '');
+      return <RoleWiseDetail slug={slug} onNavigate={navigate} />;
+    }
+
+    // Most Asked
+    if (p === '/preparation/most-asked-questions') return <MostAskedIndex onNavigate={navigate} />;
+    if (p.startsWith('/preparation/most-asked-questions/')) {
+      const slug = p.replace('/preparation/most-asked-questions/', '');
+      return <MostAskedDetail slug={slug} onNavigate={navigate} />;
+    }
+
+    // HR Questions
+    if (p === '/preparation/hr-questions') return <HrQuestions onNavigate={navigate} />;
+
+    // Cold Emails
+    if (p === '/preparation/cold-email-templets') return <ColdEmailsIndex onNavigate={navigate} />;
+
+    // Playlists
+    if (
+      p === '/preparation/dsa-playlists' ||
+      p === '/preparation/dbms-playlists' ||
+      p === '/preparation/os-playlists' ||
+      p === '/preparation/oops-playlists' ||
+      p === '/preparation/system-design-playlists'
+    ) {
+      return <PlaylistsIndex onNavigate={navigate} />;
+    }
+
+    // Notes
+    if (p === '/preparation/notes') return <NotesIndex onNavigate={navigate} />;
+
+    // Resume Templates
+    if (p === '/preparation/resume-templates') return <ResumeTemplates onNavigate={navigate} />;
+
+    return <Dashboard onNavigate={navigate} />;
+  };
+
+  const p = currentPath.replace(/\/$/, '') || '/';
+  const isPreparationSection = p.startsWith('/preparation');
+
+  return (
+    <div className="flex flex-col min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans selection:bg-indigo-500 selection:text-white">
+      {isPreparationSection ? (
+        /* Preparation Shell Layout: Banner, Sidebar, TopNav, Content */
+        <PreparationShell
+          currentPath={currentPath}
+          onNavigate={navigate}
+          onOpenSearch={() => setSearchOpen(true)}
+        >
+          {renderPreparationContent(p)}
+        </PreparationShell>
+      ) : (
+        /* Public Marketing Layout: Home, Jobs, Interview, Legal */
+        <>
+          <Navbar
+            currentPath={currentPath}
+            onNavigate={navigate}
+            onOpenSearch={() => setSearchOpen(true)}
+          />
+
+          <main className="flex-1">
+            {p === '/' && <Home onNavigate={navigate} />}
+            {p === '/jobs' && <Jobs onNavigate={navigate} />}
+            {p === '/interview' && <InterviewExperiences onNavigate={navigate} />}
+            {['/about', '/contact', '/privacy', '/terms', '/refund-policy'].includes(p) && (
+              <Legal type={p.replace('/', '')} onNavigate={navigate} />
+            )}
+          </main>
+
+          <Footer onNavigate={navigate} />
+        </>
+      )}
+
+      {/* Global Modals */}
+      <GlobalSearchModal
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        onNavigate={navigate}
+      />
+      <NoteModal />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ProgressProvider>
+      <MainRouter />
+    </ProgressProvider>
+  );
+}

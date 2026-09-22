@@ -1,0 +1,297 @@
+{
+  "brand": {
+    "name": "GetPlaced",
+    "shortName": "GetPlaced",
+    "primaryTagline": "Track your grind. Clear your interviews.",
+    "alternativeTaglines": [
+      "The placement prep tracker that keeps you consistent.",
+      "Zero fluff DSA tracker for engineering students.",
+      "Turn daily problem solving into placement offers."
+    ],
+    "footer": {
+      "copyright": "Built for engineering students grinding for tech placements. GetPlaced © 2026. Keep showing up.",
+      "disclaimer": "All problem sets are credited to their respective original curators. Progress is tracked locally in your browser."
+    },
+    "seo": {
+      "defaultTitle": "GetPlaced | No-Nonsense DSA & Placement Prep Tracker",
+      "sheetTitleTemplate": "GetPlaced — {sheetTitle} | Track Your Placement Progress",
+      "metaDescription": "Stop losing your DSA progress across spreadsheets. GetPlaced tracks your placement grind across curated problem sheets with instant search, local auto-save, and zero fluff.",
+      "keywords": [
+        "DSA tracker",
+        "placement preparation",
+        "coding interview tracker",
+        "engineering placements",
+        "curated DSA roadmaps",
+        "campus interview practice",
+        "SDE placement grind"
+      ]
+    }
+  },
+  "topBanner": {
+    "defaultActiveOption": "placementSeason",
+    "options": {
+      "placementSeason": {
+        "id": "placementSeason",
+        "badge": "PLACEMENT DRIVE",
+        "message": "⚡ Placement drives are lining up. Pick your target sheet, lock in, and protect your streak."
+      },
+      "launchNote": {
+        "id": "launchNote",
+        "badge": "GETPLACED LIVE",
+        "message": "🚀 GetPlaced is live — your distraction-free DSA tracker with zero-loss local progress saving."
+      },
+      "newContent": {
+        "id": "newContent",
+        "badge": "NEW ROADMAPS",
+        "message": "🔥 Top 110 SQL queries and System Design interview blueprints just dropped. Add them to your daily rotation."
+      }
+    }
+  },
+  "navigation": {
+    "groups": {
+      "sheets": {
+        "key": "sheets",
+        "options": [
+          "Prep Sheets",
+          "Problem Trackers",
+          "Code Roadmaps"
+        ],
+        "activeLabel": "Prep Sheets"
+      },
+      "learning": {
+        "key": "learning",
+        "options": [
+          "Learning Tracks",
+          "Core Playlists",
+          "Foundations"
+        ],
+        "activeLabel": "Learning Tracks"
+      },
+      "resources": {
+        "key": "resources",
+        "options": [
+          "Placement Toolkit",
+          "Interview Assets",
+          "Career Vault"
+        ],
+        "activeLabel": "Placement Toolkit"
+      }
+    },
+    "items": {
+      "dsaSheets": {
+        "label": "Curated DSA Sheets",
+        "description": "Standard roadmaps from proven mentors"
+      },
+      "companySheets": {
+        "label": "Company Question Banks",
+        "description": "Problems asked by top product & service firms"
+      },
+      "patterns": {
+        "label": "20 Core Algorithmic Patterns",
+        "description": "Master patterns instead of memorizing solutions"
+      },
+      "packageWise": {
+        "label": "Salary-Tier Checklists",
+        "description": "Calibrated problem sets from 3 LPA to 50+ LPA"
+      },
+      "sqlSheet": {
+        "label": "Top 110 SQL Queries",
+        "description": "Production database interview scenarios"
+      },
+      "systemDesign": {
+        "label": "System Design Blueprints",
+        "description": "High-level & low-level architecture breakdowns"
+      },
+      "dsaPlaylists": {
+        "label": "DSA Video Playlists",
+        "description": "Curated lectures from premier educators"
+      },
+      "coreSubjects": {
+        "label": "CS Fundamentals",
+        "description": "OS, DBMS, Computer Networks & OOPs"
+      },
+      "systemDesignPlaylists": {
+        "label": "System Design Lectures",
+        "description": "Scalability, microservices & caching patterns"
+      },
+      "roleWise": {
+        "label": "Role-Specific Guides",
+        "description": "Tailored prep for Frontend, Backend, DevOps & AI"
+      },
+      "mostAsked": {
+        "label": "High-Frequency Q&A",
+        "description": "The exact conceptual questions asked in technical rounds"
+      },
+      "hrQuestions": {
+        "label": "HR & Behavioral Playbook",
+        "description": "100 questions with winning STAR frameworks"
+      },
+      "coldEmails": {
+        "label": "Cold Outreach Templates",
+        "description": "Proven templates to secure referrals and HR replies"
+      },
+      "notes": {
+        "label": "Revision Handbooks",
+        "description": "Direct cheat sheets for fast revision before rounds"
+      },
+      "resumes": {
+        "label": "ATS-Ready Resume Templates",
+        "description": "Recruiter-tested LaTeX & Doc templates"
+      }
+    }
+  },
+  "sheetIntros": {
+    "platformGeneralIntro": "GetPlaced is engineered for students who refuse to leave their placement preparation to chance. Rather than juggling disconnected bookmarks and messy spreadsheets, this tracker keeps your entire problem-solving roadmap focused in one spot. Every problem you check off is preserved directly in your browser, guaranteeing your progress is right where you left it tomorrow. Choose a sheet below, knock out today's quota, and build the confidence required to clear technical interviews.",
+    "sheets": {
+      "striver-a2z-dsa-sheet": {
+        "intro": "Track your progress through the comprehensive DSA roadmap designed by Striver (TakeUForward). GetPlaced organizes all 455 problems into clear milestones with direct links and YouTube walkthroughs, storing every solved checkmark on your device so you never lose your place.",
+        "attribution": "Curated by Striver (TakeUForward) • Tracked on GetPlaced • 455 Problems",
+        "curatorName": "Striver (TakeUForward)",
+        "badgeText": "455 Milestone Road"
+      },
+      "love-babbar-dsa-sheet": {
+        "intro": "Execute the classic 450-problem interview checklist curated by Love Babbar. Tailored specifically for high-yield placement drives, GetPlaced tracks your journey topic by topic so you stay accountable from day one through offer day.",
+        "attribution": "Curated by Love Babbar • Tracked on GetPlaced • 430 Problems",
+        "curatorName": "Love Babbar",
+        "badgeText": "The 450 Classic"
+      },
+      "neetcode-dsa-sheet": {
+        "intro": "Tackle the industry-standard 150-question collection curated by NeetCode. Covering every high-frequency pattern tested by top tech firms, GetPlaced gives you a distraction-free checklist to conquer the essentials with speed.",
+        "attribution": "Curated by NeetCode • Tracked on GetPlaced • 150 Problems",
+        "curatorName": "NeetCode",
+        "badgeText": "150 Core Patterns"
+      },
+      "rohit-negi-dsa-sheet": {
+        "intro": "Work through the in-depth 700+ problem syllabus curated by Rohit Negi (Coder Army). GetPlaced keeps this rigorous, zero-to-hero curriculum structured and bite-sized, tracking your problem-solving stamina as you climb from basics to advanced algorithms.",
+        "attribution": "Curated by Rohit Negi (Coder Army) • Tracked on GetPlaced • 726 Problems",
+        "curatorName": "Rohit Negi (Coder Army)",
+        "badgeText": "700+ Comprehensive"
+      },
+      "shradha-khapra-dsa-sheet": {
+        "intro": "Follow the structured problem compilation curated by Shradha Khapra (Apna College). GetPlaced turns this beginner-to-placement curriculum into an intuitive daily tracker with difficulty filters, instant search, and personal revision notes.",
+        "attribution": "Curated by Shradha Khapra (Apna College) • Tracked on GetPlaced • 403 Problems",
+        "curatorName": "Shradha Khapra (Apna College)",
+        "badgeText": "College to SDE"
+      },
+      "fraz-dsa-sheet": {
+        "intro": "Grind through the high-impact problem set curated by Mohammad Fraz. Focused strictly on core placement patterns, GetPlaced helps you track your weak areas and turn them into strengths before technical interviews.",
+        "attribution": "Curated by Mohammad Fraz • Tracked on GetPlaced • 279 Problems",
+        "curatorName": "Mohammad Fraz",
+        "badgeText": "High-Yield DSA"
+      },
+      "arsh-goyal-dsa-sheet": {
+        "intro": "Master the popular placement question set curated by Arsh Goyal. GetPlaced tracks your completion rates across every phase so you walk into campus and off-campus drives with complete confidence.",
+        "attribution": "Curated by Arsh Goyal • Tracked on GetPlaced • 287 Problems",
+        "curatorName": "Arsh Goyal",
+        "badgeText": "Placement Favorites"
+      },
+      "patterns-20": {
+        "intro": "Stop trying to memorize thousands of individual questions. Master these 20 foundational algorithmic patterns that recur across 90% of technical interview problems.",
+        "attribution": "Curated by Industry Veterans • Tracked on GetPlaced • 180 Problems",
+        "curatorName": "Industry Veterans",
+        "badgeText": "Pattern Mastery"
+      },
+      "company-wise": {
+        "intro": "Direct company-specific question banks asked in recent online assessments and onsite interview rounds across 45+ premier tech firms.",
+        "attribution": "Aggregated from Recent Drives • Tracked on GetPlaced",
+        "curatorName": "Recent Placement Rounds",
+        "badgeText": "Company Vault"
+      },
+      "package-wise": {
+        "intro": "Calibrated coding roadmaps segmented strictly by salary bracket — from service-oriented rounds (3-6 LPA) to Tier-1 FAANG and HFT bars (50+ LPA).",
+        "attribution": "Curated by Senior Tech Leads • Tracked on GetPlaced • 200 Problems",
+        "curatorName": "Senior Tech Leads",
+        "badgeText": "Salary Roadmaps"
+      },
+      "sql-110": {
+        "intro": "110 practical database queries frequently asked in software engineering and data engineering technical rounds, complete with syntax-highlighted solutions.",
+        "attribution": "Curated by Database Engineers • Tracked on GetPlaced • 110 Queries",
+        "curatorName": "Database Engineers",
+        "badgeText": "Top 110 Queries"
+      },
+      "system-design": {
+        "intro": "High Level (HLD) and Low Level Design (LLD) case studies tested in senior placement rounds and product engineering interviews.",
+        "attribution": "Curated by Distributed Systems Architects • Tracked on GetPlaced • 32 Systems",
+        "curatorName": "Distributed Systems Architects",
+        "badgeText": "Architecture Vault"
+      }
+    }
+  },
+  "rewrittenBracketedTopics": {
+    "Step 3 : Solve Problems on Arrays [Easy -> Medium -> Hard]": "Step 3 : Solve Problems on Arrays [From Foundational Techniques to Complex Multi-Pointer Challenges]",
+    "Step 4 : Binary Search [1D, 2D Arrays, Search Space]": "Step 4 : Binary Search [Linear Arrays, Grid Traversal & Search Space Monotonicity]",
+    "Step 5 : Strings [Basic and Medium]": "Step 5 : Strings [Core String Manipulation & Substring Analysis]",
+    "Step 6 : Learn LinkedList [Single LL, Double LL, Medium, Hard Problems]": "Step 6 : Learn LinkedList [Singly & Doubly Linked Pointers, Cycle Detection & Structural Inversion]",
+    "Step 7 : Recursion [PatternWise]": "Step 7 : Recursion [Subsequence Generation, Backtracking & Decision Trees]",
+    "Step 8 : Bit Manipulation [Concepts & Problems]": "Step 8 : Bit Manipulation [Binary Operators, Masking & Low-Level Math Optimization]",
+    "Step 9 : Stack and Queues [Learning, Pre-In-Post-fix, Monotonic Stack, Implementation]": "Step 9 : Stack and Queues [LIFO/FIFO Internals, Notation Parsing & Monotonic Ranges]",
+    "Step 10 : Sliding Window & Two Pointer Combined Problems": "Step 10 : Sliding Window & Two Pointer Combined Problems [Dynamic Subarrays & Frequency Counters]",
+    "Step 11 : Heaps [Learning, Medium, Hard Problems]": "Step 11 : Heaps [Priority Queues, Top-K Filtering & Min/Max Order Maintenance]",
+    "Step 12 : Greedy Algorithms [Easy, Medium/Hard]": "Step 12 : Greedy Algorithms [Local Optimum Decisions, Scheduling & Interval Ordering]",
+    "Step 13 : Binary Trees [Traversals, Medium and Hard Problems]": "Step 13 : Binary Trees [Hierarchical Traversal, Path Sums & Tree Depth Invariants]",
+    "Step 14 : Binary Search Trees [Concept and Problems]": "Step 14 : Binary Search Trees [Ordered Key Lookup, Validation & BST Mutations]",
+    "Step 15 : Graphs [Concepts & Problems]": "Step 15 : Graphs [BFS/DFS Exploration, Shortest Path Routing & Disjoint Set Unions]",
+    "Step 16 : Dynamic Programming [Patterns and Problems]": "Step 16 : Dynamic Programming [State Transition Formulas, Memoization & Tabulation]",
+    "Step 17 : Tries": "Step 17 : Tries [Prefix Tree Dictionaries, Bitwise XOR & Autocomplete Structures]"
+  },
+  "microcopy": {
+    "progressStates": {
+      "zeroPercent": {
+        "headline": "Clean slate.",
+        "subline": "First problem hits the hardest. Check off problem #1."
+      },
+      "inProgress": {
+        "headline": "Solid pace.",
+        "subline": "Consistency compounds. Knock out the next one."
+      },
+      "hundredPercent": {
+        "headline": "Sheet conquered.",
+        "subline": "You earned this milestone — keep that edge in your interviews."
+      }
+    },
+    "checkbox": {
+      "markDone": "Mark as solved",
+      "markUndone": "Mark as unsolved",
+      "solvedToast": "Problem checked off!"
+    },
+    "toggles": {
+      "readMore": "Read roadmap breakdown",
+      "readLess": "Show less",
+      "expandTopic": "Expand topic",
+      "collapseTopic": "Collapse topic",
+      "expandAll": "Expand all topics",
+      "collapseAll": "Collapse all topics"
+    },
+    "modalsAndActions": {
+      "searchPlaceholder": "Search 2,500+ problems, patterns, SQL queries, or topics (Ctrl + K)...",
+      "noSearchResults": "No problems match your query. Try a different keyword.",
+      "bookmarkAdd": "Star for revision",
+      "bookmarkRemove": "Remove star",
+      "addNote": "Add personal interview notes",
+      "editNote": "Edit note",
+      "watchSolution": "Watch video breakdown",
+      "resetConfirm": "Reset this sheet? Your solved checkmarks for this roadmap will be cleared.",
+      "resetButton": "Reset Progress",
+      "exportData": "Export JSON Backup",
+      "importData": "Restore Progress",
+      "backToSheets": "Back to Prep Sheets",
+      "backToDashboard": "Back to Tracker Hub"
+    },
+    "stats": {
+      "problemsSolved": "Problems Solved",
+      "completionRate": "Completion Rate",
+      "currentStreak": "Day Streak Active",
+      "keepStreak": "Don't break the chain today."
+    },
+    "filters": {
+      "all": "All Difficulties",
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "statusAll": "All Status",
+      "statusSolved": "Solved",
+      "statusUnsolved": "Unsolved",
+      "statusStarred": "Starred for Revision"
+    }
+  }
+}
