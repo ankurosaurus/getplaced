@@ -1,31 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
-    <linearGradient id="gpFaviconBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#18181b" />
-      <stop offset="100%" stopColor="#09090b" />
-    </linearGradient>
-    <linearGradient id="gpFaviconGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+    <linearGradient id="gpBrandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stopColor="#ef763f" />
-      <stop offset="50%" stopColor="#a855f7" />
+      <stop offset="50%" stopColor="#8b5cf6" />
       <stop offset="100%" stopColor="#007ff5" />
-    </linearGradient>
-    <linearGradient id="gpFaviconArrow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#ffffff" />
-      <stop offset="100%" stopColor="#ef763f" />
     </linearGradient>
   </defs>
 
-  <!-- Squircle Base -->
-  <rect width="48" height="48" rx="12" fill="url(#gpFaviconBg)" />
-  <rect x="1" y="1" width="46" height="46" rx="11" stroke="url(#gpFaviconGlow)" stroke-width="2" stroke-opacity="0.8" />
+  <!-- High-contrast brand squircle badge (vibrant against dark tabs and light tabs) -->
+  <rect width="64" height="64" rx="18" fill="url(#gpBrandGrad)" />
 
   <!-- Code Chevron `<` -->
-  <path d="M19 14L10 24L19 34" stroke="url(#gpFaviconGlow)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M26 18L14 32L26 46" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
 
   <!-- Ascending Placement Arrow `↗` -->
-  <path d="M23 33L37 17" stroke="url(#gpFaviconArrow)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M25 17H37V29" stroke="url(#gpFaviconArrow)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M30 46L50 20" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M32 20H50V38" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
 
-  <!-- Placement node -->
-  <circle cx="37" cy="17" r="2.5" fill="#ef763f" />
+  <!-- Placement target dot -->
+  <circle cx="50" cy="20" r="3" fill="#ffffff" />
 </svg>
