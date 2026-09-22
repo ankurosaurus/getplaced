@@ -51,6 +51,50 @@ function MainRouter() {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
+  useEffect(() => {
+    const routeTitles = {
+      '/': 'GetPlaced — Tech Placement & DSA Prep Tracker by Ankur Jha',
+      '/preparation': 'Dashboard | GetPlaced by Ankur Jha',
+      '/preparation/dsa-sheets': 'DSA Sheets Directory | GetPlaced',
+      '/preparation/dsa-sheets/striver-a2z-dsa-sheet': "Striver's A2Z DSA Sheet | GetPlaced",
+      '/preparation/dsa-sheets/love-babbar-dsa-sheet': 'Love Babbar 450 DSA Sheet | GetPlaced',
+      '/preparation/dsa-sheets/shradha-khapra-dsa-sheet': 'Shradha Didi DSA Sheet | GetPlaced',
+      '/preparation/dsa-sheets/rohit-negi-dsa-sheet': 'Rohit Negi DSA Sheet | GetPlaced',
+      '/preparation/dsa-sheets/arsh-goyal-dsa-sheet': 'Arsh Goyal DSA Sheet | GetPlaced',
+      '/preparation/dsa-sheets/fraz-dsa-sheet': 'Fraz DSA Sheet | GetPlaced',
+      '/preparation/dsa-sheets/neetcode-dsa-sheet': 'Neetcode 150 DSA Sheet | GetPlaced',
+      '/preparation/20-essential-dsa-patterns': '20 Essential DSA Patterns | GetPlaced',
+      '/preparation/company-wise-dsa-sheet': 'Company-Wise DSA Sheets | GetPlaced',
+      '/preparation/package-wise-dsa-sheet': 'Package-Wise DSA Sheet | GetPlaced',
+      '/preparation/sql-sheet': 'Top 110 SQL Queries Sheet | GetPlaced',
+      '/preparation/system-design-sheet': 'System Design Sheet | GetPlaced',
+      '/preparation/role-wise': 'Role-Wise Preparation Guides | GetPlaced',
+      '/preparation/most-asked-questions': 'Most Asked Interview Questions | GetPlaced',
+      '/preparation/hr-questions': 'Top 100 HR Interview Questions | GetPlaced',
+      '/preparation/cold-email-templets': 'Cold Email Templates | GetPlaced',
+      '/preparation/notes': 'Curated Tech Notes | GetPlaced',
+      '/preparation/resume-templates': 'Resume Templates | GetPlaced',
+      '/jobs': 'Tech Jobs Board | GetPlaced',
+      '/interview': 'Interview Experiences | GetPlaced',
+      '/privacy': 'Privacy Policy | GetPlaced',
+      '/terms': 'Terms of Service | GetPlaced',
+      '/refund-policy': 'Refund Policy | GetPlaced',
+      '/contact': 'Contact Us | GetPlaced',
+    };
+
+    if (routeTitles[currentPath]) {
+      document.title = routeTitles[currentPath];
+    } else if (currentPath.startsWith('/preparation/company-wise-dsa-sheet/')) {
+      const comp = currentPath.replace('/preparation/company-wise-dsa-sheet/', '').toUpperCase();
+      document.title = `${comp} Interview DSA Questions | GetPlaced`;
+    } else if (currentPath.startsWith('/preparation/role-wise/')) {
+      const role = currentPath.replace('/preparation/role-wise/', '').replace(/-/g, ' ');
+      document.title = `${role.toUpperCase()} Prep Guide | GetPlaced`;
+    } else {
+      document.title = 'GetPlaced — Tech Placement & DSA Prep Tracker by Ankur Jha';
+    }
+  }, [currentPath]);
+
   const navigate = (path, openSearch = false) => {
     if (openSearch) {
       setSearchOpen(true);
